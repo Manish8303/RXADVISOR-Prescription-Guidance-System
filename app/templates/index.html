@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RxAdvisor- Prescription Guidance &  Decision Support System</title>
+
+  <!-- Bootstrap + Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a2e0e6ad8b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-white min-h-screen">
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand text-blue-700 font-bold text-2xl" href="#">
+        <i class="fa-solid fa-stethoscope text-blue-500 me-2"></i>RxAdvisor- Prescription Guidance &  Decision Support System
+      </a>
+      <div class="ms-auto">
+        <span class="text-gray-600 fw-semibold">Clinical Support Dashboard</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN BODY -->
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="text-4xl font-extrabold text-blue-700 mb-2">RxAdvisor- Prescription Guidance &  Decision Support System</h1>
+      <p class="text-gray-600 text-lg">Analyze symptoms, predict diseases, and recommend medications intelligently.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- LEFT PANEL: Patient Info -->
+      <div class="bg-white shadow-lg rounded-3xl p-5 border-t-4 border-blue-500">
+        <h3 class="text-xl font-semibold text-blue-600 mb-4"><i class="fa-solid fa-user me-2"></i>Patient Details</h3>
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Age</label>
+          <input type="number" id="age" class="form-control form-control-lg" placeholder="Enter patient age" min="1" max="120" />
+        </div>
+        <div class="mb-4">
+          <label class="form-label fw-semibold">Gender</label>
+          <select id="gender" class="form-select form-select-lg">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+        <p class="text-sm text-gray-500 mt-3"><i class="fa-solid fa-circle-info me-1 text-blue-500"></i>This information helps refine the diagnosis prediction.</p>
+      </div>
+
+      <!-- MIDDLE PANEL: Symptoms -->
+      <div class="lg:col-span-2 bg-white shadow-lg rounded-3xl p-5 border-t-4 border-green-500">
+        <h3 class="text-xl font-semibold text-green-600 mb-4"><i class="fa-solid fa-virus me-2"></i>Select Symptoms</h3>
+        <div id="symptom-list" class="row g-2"></div>
+
+        <div class="text-center mt-5">
+          <button id="submitBtn" class="btn btn-success btn-lg px-5 py-3 shadow">
+            <i class="fa-solid fa-microscope me-2"></i>Analyze Symptoms
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div id="resultBox" class="mt-10 hidden">
+      <div class="bg-white shadow-xl rounded-3xl p-6 border-t-4 border-indigo-600">
+        <div class="flex items-center mb-4">
+          <i class="fa-solid fa-heart-pulse text-indigo-500 text-3xl me-3"></i>
+          <h3 class="text-2xl font-bold text-indigo-600">Diagnosis Result</h3>
+        </div>
+        <p id="disease" class="text-xl text-gray-800 mb-2"></p>
+        <p id="medicine" class="text-lg text-red-500 fw-semibold"></p>
+        <p id="confidence" class="text-gray-700"></p>
+        <p id="notes" class="text-gray-500 italic"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+<footer class="fixed bottom-0 left-0 w-full bg-gray-900 text-gray-300 text-center py-3 shadow-lg border-t border-gray-700">
+  <div class="container mx-auto px-4">
+    <p class="text-sm">© 2025 RxAdvisor- Prescription Guidance &  Decision Support System — Developed by Manish Singh</p>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

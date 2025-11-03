@@ -1,0 +1,22 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  border-radius: 20px !important;
+}
+
+.btn-success {
+  background: linear-gradient(to right, #16a34a, #22c55e);
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #15803d, #16a34a);
+}
+
+.hidden {
+  display: none;
+}
